@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fundentes500</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Fundentes500" class="logo animar-logo" />
+    <div class="titulo">
+      <h1>Fundentes500</h1>
+      <p class="firma">by Gustavo Cifuentes</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="formulario">
+      <form id="colada-form">
+        <label>N° de Carro: <input type="text" id="colada" required /></label>
+        <label>Peso Precipitado (kg): <input type="number" id="peso" required /></label>
+        <label>Bórax (%): <input type="number" id="borax" value="44" /></label>
+        <label>Nitrato (%): <input type="number" id="nitrato" value="14" /></label>
+        <label>Carbonato (%): <input type="number" id="carbonato" value="6" /></label>
+        <label>Silice (%): <input type="number" id="silice" value="2" /></label>
+        <label>Fluorita (%): <input type="number" id="fluorita" value="2" /></label>
+        <button type="submit">Calcular</button>
+      </form>
+    </section>
+
+    <section class="resumen">
+      <h2>Resumen del Turno</h2>
+      <table id="tabla-coladas">
+        <thead>
+          <tr>
+            <th>Carro</th>
+            <th>Precipitado (kg)</th>
+            <th>Bórax</th>
+            <th>Nitrato</th>
+            <th>Carbonato</th>
+            <th>Silice</th>
+            <th>Fluorita</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Totales</strong></td>
+            <td id="total-peso">0</td>
+            <td id="total-borax">0</td>
+            <td id="total-nitrato">0</td>
+            <td id="total-carbonato">0</td>
+            <td id="total-silice">0</td>
+            <td id="total-fluorita">0</td>
+          </tr>
+        </tfoot>
+      </table>
+      <button id="reiniciar">Reiniciar Turno</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
