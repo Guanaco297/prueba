@@ -1,1 +1,0 @@
-// Script funcional previamente guardado. Listo para producción.
