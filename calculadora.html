@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora de Fundentes</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Operador IA</h2>
+    <ul>
+      <li><a href="calculadora.html">Calculadora de Fundentes</a></li>
+      <li>
+        <span>Enfriador (Chiller)</span>
+        <ul>
+          <li><a href="chiller/guia.html">Guía de uso</a></li>
+          <li><a href="chiller/fallas.html">Fallas comunes</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="contenido">
+    <h1>Calculadora de Fundentes</h1>
+    <form id="formulario">
+      <label for="peso">Peso del precipitado (kg):</label><br>
+      <input type="number" id="peso" step="0.01"><br><br>
+
+      <label for="borax">Borax (%):</label><input type="number" id="borax" value="44"><br>
+      <label for="nitrato">Nitrato (%):</label><input type="number" id="nitrato" value="14"><br>
+      <label for="carbonato">Carbonato (%):</label><input type="number" id="carbonato" value="6"><br>
+      <label for="silice">Sílice (%):</label><input type="number" id="silice" value="2"><br>
+      <label for="fluorita">Fluorita (%):</label><input type="number" id="fluorita" value="1"><br><br>
+
+      <button type="button" onclick="calcularFundentes()">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function calcularFundentes() {
+      const peso = parseFloat(document.getElementById('peso').value);
+      const borax = parseFloat(document.getElementById('borax').value);
+      const nitrato = parseFloat(document.getElementById('nitrato').value);
+      const carbonato = parseFloat(document.getElementById('carbonato').value);
+      const silice = parseFloat(document.getElementById('silice').value);
+      const fluorita = parseFloat(document.getElementById('fluorita').value);
+
+      const resultado = `
+        <h2>Resultado:</h2>
+        <ul>
+          <li>Bórax: ${(peso * borax / 100).toFixed(2)} kg</li>
+          <li>Nitrato: ${(peso * nitrato / 100).toFixed(2)} kg</li>
+          <li>Carbonato: ${(peso * carbonato / 100).toFixed(2)} kg</li>
+          <li>Sílice: ${(peso * silice / 100).toFixed(2)} kg</li>
+          <li>Fluorita: ${(peso * fluorita / 100).toFixed(2)} kg</li>
+        </ul>
+      `;
+
+      document.getElementById('resultado').innerHTML = resultado;
+    }
+  </script>
+</body>
+</html>
